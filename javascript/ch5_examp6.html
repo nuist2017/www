@@ -1,0 +1,39 @@
+<html>
+<body>
+<script>
+var browser="Unkown";
+var version="0";
+//NN4+
+if (document.layers)
+{
+	browser="NN";
+	version="4.0";
+
+if (navigator.securityPlicy)
+{
+	version="4.7";
+}
+}
+else if (document.all)
+{
+	browser="IE";
+	version="4";
+}
+//IE5+
+if (window.clipboardData)
+{
+	browser="IE5";
+	version="5+";
+}
+
+//Firefox/NN6+
+else if (window.sidebar)
+{
+	browser="Firefox";
+	version="1+";
+}
+
+document.write(browser+" "+version);
+</script>
+</body>
+</html>

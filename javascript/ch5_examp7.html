@@ -1,0 +1,86 @@
+<html>
+<head>
+<script type="text/javascript">
+function getBrowserName()
+{
+	var lsBrowser=navigator.userAgent;
+	if (lsBrowser.indexOf("MSIE")>=0)
+	{
+		lsBrowser="MSIE";
+	}
+	else if (lsBrowser.indexOf("Netscape")>=0)
+	{
+		lsBrowser="Netscape";
+	}
+	else if (lsBrowser.indexOf("Firefox")>=0)
+	{
+		lsBrowser="Firefox";
+	}
+	else if (lsBrowser.indexOf("Safari")>=0)
+	{
+		lsBrowser="Safari";
+	}
+	else if (lsBrowser.indexOf("Opera")>=0)
+	{
+		lsBrowser="Opera";
+	}
+	else
+	{
+		lsBrowser="UNKOWN";
+	}
+	return lsBrowser;
+}
+
+function getBrowserVerson()
+{
+	var findIndex;
+	var browserVersion=0;
+	var	browser=getBrowserName();
+	browserVersion=navigator.userAgent;
+	findIndex=browserVersion.indexOf(browser)+browser.length+1;
+	browserVersion=parseFloat(browserVersion.substring(findIndex,findIndex+3));
+	return browserVersion;
+}
+
+</script>
+</head>
+<body>
+<script language="JavaScript" type="text/javaScript">
+	var browserName=getBrowserName();
+	var	browserVersion=getBrowserVerson();
+	if (browserName=="MSIE")
+	{
+		if (browserVersion<5.5)
+		{
+		document.write("Your version of Internet Explorer is too old");
+		}
+		else
+		{
+			document.write("Your version of Internet Explorer is fully surpported");
+		}
+	}
+	else if (browserName=="Firefox")
+	{
+		document.write("Firefox is fully surpported");
+	}
+	else if (browserName=="Netscape")
+	{
+		if (browserVersion<6)
+		{
+			document.write("Your version of Netscape is too old");
+		}
+		else
+		{
+			document.write("Your version of Netscape is fully surpported");
+		}
+	}
+	else
+	{
+		document.write("<h2>Sorry this browser version is not surpported</h2>");
+	}
+</script>
+<noscript>
+<h2>This website requires a browser surpporting scripting</h2>
+</noscript>
+</body>
+</html>
