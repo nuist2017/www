@@ -1,39 +1,14 @@
 <html>
 <body>
-<script>
-var browser="Unkown";
-var version="0";
-//NN4+
-if (document.layers)
-{
-	browser="NN";
-	version="4.0";
-
-if (navigator.securityPlicy)
-{
-	version="4.7";
-}
-}
-else if (document.all)
-{
-	browser="IE";
-	version="4";
-}
-//IE5+
-if (window.clipboardData)
-{
-	browser="IE5";
-	version="5+";
-}
-
-//Firefox/NN6+
-else if (window.sidebar)
-{
-	browser="Firefox";
-	version="1+";
-}
-
-document.write(browser+" "+version);
-</script>
+<a href='javascript:
+	var e="",r="";/*需要计算表达式和结果*/
+	do {
+		/*输出表达式和结果，并要求输入新的表达式*/
+		e=prompt("Expression:"+e+"\n"+r+"\n",e);
+		try { r="Result:"+eval(e);}/*尝试计算表达式和结果*/
+		catch(ex) {r=ex;}
+	}while(e);
+	void 0;
+	'>JavaScript Evaluator</a>
 </body>
 </html>
