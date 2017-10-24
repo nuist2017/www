@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+<script>
+ //根据指定表格每行第n个单元格的值，对第一个<tbody>中进行排序
+ //如果存在comparator函数则使用它，否则按照字母表顺序比较
+ function sortrows(table,n,comparator) {
+	var tbody=table.tBodies[0];//第一个<tbody>，可能是隐式创建
+	var rows=tbody.getElementsByTagname("tr") //tbody中的所有行
+	rows=array.prototype.slice.call(rows,0);//真实数组中的快照
+	
+	//基于第n个<td>元素的值对行排序
+	rows.sort(function(row1,row2){
+	}
+ }
+ 
+</script>
+</head>
+<doby>
+</body>
+</html>
