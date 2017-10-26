@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	function shake(e,oncomplet,distance,time){
+		if(typeof e==="string")e=document.getElementById(e);
+		if(!time)time=500;
+		if(!distance)distance=5;
+	
+		var originalStyle=e.style.cssText;
+		e.style.position="relative";
+		var start=(new Date()).getTime();		
+		animate();
+		function animate(){
+			var now=(new Date()).getTime();
+			var elapsed=now-start;
+			console.log(elapsed);
+			var fraction=elapsed/time;
+		
+			if(fraction<1){
+				var x=distance*Math.sin(fraction*4*Math.PI);
+				e.style.left=x+"px";
+				setTimeout(animate,Math.min(25,time-elapsed));
+			}
+			else{
+				e.style.cssText=originalStyle
+				if(oncomplet)oncomplet(e);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<h2 id="s">Gooooooooo!!!</h2>
+<script>
+	var e=document.getElementById("s");
+	shake(e);
+</script>
+</body>
+</html>

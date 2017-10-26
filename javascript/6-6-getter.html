@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>random.octet</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			var random={
+				get octet() {return Math.floor(Math.random()*256);},
+				get uint16() {return Math.floor(Math.random()*65536);}
+			}
+			console.log(random.octet);
+			console.log(random.uint16);
+		</script>
+	</body>
