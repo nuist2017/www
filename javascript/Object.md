@@ -89,14 +89,25 @@ o.hasOwnProperty("x");	//true
 o.hasOwnProperty("y");	//false
 o.hasOwnProperty("toString");	//false:toString是不是自有属性是继承的
 
-propertyIsEnumberable()是hasOwnProperty()的增强版，
+propertyIsEnumerable()是hasOwnProperty()的增强版，
 只有检测到是自有属性且这个属性可枚举才返回true
 
 var o=inherit({y:2});
 o.x=1;
-o.propertyIsEnumberable("x");	//true
-o.propertyIsEnumberable("y");	//false
-Object.prototype.propertyIsEnumberable("toString") //false:不可枚举
+o.propertyIsEnumerable("x");	//true
+o.propertyIsEnumerable("y");	//false
+Object.prototype.propertyIsEnumerable("toString") //false:不可枚举
 </pre>
 ##函数function才有prototype
+
+除了使用in运算符之外，另一种更简便的方法“!==”判断一个属性是否是undefined：
+<pre>
+var o={x:1};
+o.x!==undefined;		//true
+o.y!==undefined;		//false
+o.toString!==undefined		//true
+</pre>
+主要代码中使用的是`!==`而不是`!=`。
+
+* 枚举属性
 
