@@ -56,6 +56,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+@font-face{
+	font-family: segoeui;
+	src: url('fonts/segoeuil.ttf');
+	font-style:lighter;
+}
+
 
 /***********Default-STYLES***********--^*/
 .clearfix {
@@ -118,9 +124,11 @@ ul {
 }
 #sup{
 	vertical-align:super;
-	font-size:0.5em;
+	font-size:0.3em;
 	color:blue;
 	margin:0em 2em;
+	position:relative;
+	top:-0.5em;
 }
 .nav2 ul{
 	
@@ -134,9 +142,11 @@ ul {
 	color:RGB(125,125,125);
 	padding:0.1em 2em;
 	border-left:solid 1px RGB(125,125,125);
-	border-right:solid 1px RGB(90,90,90);
+	border-right:solid 1px RGB(125,125,125);
 	text-decoration: none;
-
+}
+.nav2 a:hover {
+	color:RGB(165,165,165);
 }
 
 /*--------------------------*/
@@ -148,6 +158,8 @@ ul {
 #p1 {
 	font-size:2em;
 	color:RGB(0,115,190);
+	font-family: segoeui,Arial;
+	font-weight:100;
 }
 #p2 {
 	color:RGB(145,145,145);
