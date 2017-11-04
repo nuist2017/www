@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+body,div,img {margin:0;padding:0;}
+div {
+	min-height:329px;
+	position:relative;
+	overflow:hidden;
+	left:0;
+}
+img {
+	position:absolute;
+	opacity:0.4;
+	filter:alpha(opacity=40); 
+}
+img:hover {
+	opacity:1;
+	filter:alpha(opacity=100); 
+}
+</style>
+<script>
+window.onload=initAll;
+var imgsUrl=["image-gallery-ayase-2010-id0.jpg",
+"image-gallery-ayase-2012-id1.jpg",
+"image-gallery-ayase-2013-id2.jpg",
+"image-gallery-ayase-2014-id3.jpg",
+"image-gallery-ayase-2016-id4.jpg",]
+var imgs=document.images;
+function initAll(){
+	for(var i=0;i<imgs.length;i++){
+		imgs[i].src=imgsUrl[i];
+		idString=imgsUrl[i].substring(imgsUrl[i].indexOf("id"),imgsUrl[i].length-4);
+		imgs[i].id=idString;
+		imgs[i].style.left=(1280-580*5)/2+580*i+"px";
+	}
+}
+
+function moveLeft(e){
+	if(!e.style.left){
+		e.style.left="0px";
+		e.style.left=parseInt(e.style.left)-580+"px";
+		setTimeout(moveLeft,2)
+	}
+}
+function next (){
+	var div_e=document.getElementById("banner");
+	moveLeft(div_e);
+}
+</script>
+</head>
+<body>
+<br/>
+<div id="banner">
+<img src="" id="">
+<img src="" id="">
+<img src="" id="">
+<img src="" id="">
+<img src="" id="">
+</div>
+<button type="button" onclick="next()">++</button>
+<button type="button" onclick="previouss()">--</button>
+</body>
+</html>
